@@ -10,7 +10,7 @@ class modele_contact {
   public function __construct($db){
         $this->db = $db;      
         $this->insert = $db->prepare("insert into contact(nom, pseudo, email, message) values(:nom, :pseudo, :email, :message)");    
-       
+        
         
 }
 
