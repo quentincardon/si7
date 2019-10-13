@@ -1,4 +1,4 @@
-<?php
+ <?php
 function actionGQuestion($twig, $db){
  $form = array();
  $question = new question($db);
