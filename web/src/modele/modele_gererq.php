@@ -4,7 +4,7 @@ class gererq{
  private $insert;
  private $select;
 
-
+    
 public function __construct($db){
   $this->db = $db ;
   $this->insert = $db->prepare("insert into forum (pseudo, objet, message) values (:pseudo, :objet, :message)");
