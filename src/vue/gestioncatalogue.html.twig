@@ -1,0 +1,107 @@
+{% extends "base.html.twig" %}
+
+{% block style %}
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="css/main.css" rel="stylesheet" media="all">
+    {%endblock %}
+
+{% block inscription %}
+    
+    {% if form.valide is defined %}
+ {% if form.valide == true %}
+ 
+ {% else %}
+ <h1 class="h3 mb-3 font-weight-normal">Echec </h1><
+ <h1 class="h3 mb-3 font-weight-normal">Erreur : {{form.message}}</h1>
+ <h1 class="h3 mb-3 font-weight-normal"><a href="index.php?page=gestionbibliotheque">Retourner </a></h1>
+ {% endif %} 
+ {% else %} 
+  
+    <h1> Ajouter un livre à la bibliothèque </h1><br><br>
+    
+    
+    
+                    <form method="POST">
+                      <div class="form-row">
+                            <div class="name">Titre</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" id="titre" type="text" name="titre">
+                                     <label for="titre" class="label--desc"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Résumé</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" id="resume" type="text" name="resume">
+                                     <label for="resume" class="label--desc"></label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="name">Auteur</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" id="email" type="text" name="auteur">
+                                     <label for="auteur" class="label--desc"></label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                           <div class="form-row">
+                            <div class="name">Gerne </div>
+                            <div class="value">
+                                <div class="input-group">
+<select class="input--style-5" id="gerne"  name="gerne">
+ <option value="1">Fantasy</option>
+ <option value="2">Fantastique</option>
+  <option value="3">BD</option>
+ <option value="4">Roman</option>
+  <option value="5">Policier</option>
+    <option value="6">Science Fiction</option>
+ <option value="7">Tragédie</option>
+  <option value="8">Comedie</option>
+  <option value="9">Fable</option>
+ 
+ </select>
+                                </div>
+                            </div>
+                        </div>
+                         
+                        
+                        <div class="form-row">
+                            <div class="name">Couverture</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <label for="couverture" ><input type="file" name="couverture" id="couverture" class="form-control"/></label>
+                                </div>
+                            </div>
+                        </div>
+                                       
+                        <div>
+                            <button class="btn btn--radius-2 btn--red" type="submit"
+name="btAjouter">Ajouter le livre à la bibliothèque</button>
+                        </div>
+                    </form>
+    {% endif %}
+    {%endblock %}
+    
+    {% block js %}
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/select2/select2.min.js"></script>
+    <script src="vendor/datepicker/moment.min.js"></script>
+    <script src="vendor/datepicker/daterangepicker.js"></script>
+    <script src="js/global.js"></script>
+{% endblock %}
