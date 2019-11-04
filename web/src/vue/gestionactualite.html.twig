@@ -1,0 +1,71 @@
+
+{% extends "base.html.twig" %}
+
+{% block style %}
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="css/main.css" rel="stylesheet" media="all">
+    {%endblock %}
+
+{% block inscription %}
+    
+    {% if form.valide is defined %}
+ {% if form.valide == true %}
+     <h1 >{{ form.message }}</h1><br><br>
+ {% else %}
+ <h1>{{ form.message }}</h1><br><br>
+ {% endif %}
+{% endif %}
+
+<h2><h1><i class="fa fa-newspaper-o" aria-hidden="true"></i> Poster une actualité sur World of Warcraft </h1><br><br>
+    
+  
+    <form method="POST">
+                        <div class="form-row m-b-55">
+                            <div class="name">Titre</div>
+                            <div class="value">
+                                <div class="row row-space">
+                                    <div class="col-2">
+                                        <div class="input-group-desc">
+                                            <input class="input--style-5" id="titre" type="text" name="titre" required>
+                                            <label for="titre" class="label--desc"></label>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="form-row">
+                            <div class="name">Message</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" id="pseudo" type="text" name="message">
+                                     <label for="message" class="label--desc"></label>
+                                </div>
+                            </div>
+                        </div>
+                                                            
+                       <div>
+                       <button class="btn btn--radius-2 btn--red" type="submit" name="btAjouter">Poster</button>
+                       </div>
+                    </form>
+    
+    
+    {%endblock %}
+    
+    {% block js %}
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/select2/select2.min.js"></script>
+    <script src="vendor/datepicker/moment.min.js"></script>
+    <script src="vendor/datepicker/daterangepicker.js"></script>
+    <script src="js/global.js"></script>
+{% endblock %}

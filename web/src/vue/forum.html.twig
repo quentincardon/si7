@@ -1,0 +1,79 @@
+{% extends "base.html.twig" %}
+
+{% block inscription %}
+    {% if form.valide is defined %}
+ {% if form.valide == true %}
+     <h1 >{{ form.message }}</h1><br><br>
+ {% else %}
+     <h1 >{{ form.message }}</h1><br><br>
+ {% endif %}
+{% endif %} 
+ 
+
+<h2> 
+
+    
+    <h1><i class="fa fa-newspaper-o" aria-hidden="true"></i> Le Forum</h1><br>
+    
+    {% for f in liste %}
+        
+    <br>
+        <div class="title-a">  {{f.objet}} </div> <br><br>
+        <div class="message-a">  {{f.message}} </div><br><br>
+      
+                              
+        <br><div class="publish-a"><i class="fa fa-user" aria-hidden="true"></i> Publié par {{f.pseudo}}</div>
+        
+  <span class="likebtn-wrapper" data-lang="fr" data-i18n_like="J'aime" data-ef_voting="push" data-identifier="like_01"></span>
+
+
+        
+        
+            {%if session.role == 2 %}
+            <div class="del">    <a href="index.php?page=actualite&idactu={{a.idactu}}"> SUPPRIMER </a> </div><br>{% endif %}
+
+    
+            <br><center><div class="separationBorder "></div></center><br>
+    {% endfor %}
+        
+    {%endblock %}
+        
+        {% block style %}
+            
+            <style>
+        .del {
+            float: right;
+        }
+        
+        .separationBorder {
+            height: 3px;
+            background: #d83c00;
+            max-width: 125px;
+
+        }
+        .title-a {
+            margin-top: 0px;
+            margin-left: 10px;
+            font-size: 22px;
+            border-left: 3px solid #d83c00;
+            padding-left: 8px;
+            text-align: left;
+            line-height: 1.8;
+            font-family: Verdana;
+            
+        }
+        .message-a {
+            margin-top: 0px;
+            margin-left: 10px;
+            font-size: 15px;
+            font-family: 'Open Sans', Arial, sans-serif;
+            line-height: 1.4;
+        }
+        .publish-a {
+            margin-top: 0px;
+            margin-left: 10px;
+            font-size: 12px;
+        }
+                </style>
+                
+                {% endblock%}
