@@ -1,0 +1,54 @@
+{% extends "base.html.twig" %}
+
+{% block inscription %}
+    
+    <h1> Livres Disponibles </h1><br><br>
+    
+  
+
+    
+    
+    {% for c in liste %} 
+     <div class="block-bibliotheque">
+        
+	<div class="cover_global" style="height:264px;">
+				<div style="height:193px;">
+            				<img class="mainimg"  src="https://i.imgur.com/tsRE9aK.jpg" width="145" height="193" border="0">
+				</div>
+				
+				<div style="global">
+					<div class="cover_infos_global">
+						<div class="cover_infos_title">{{c.titre}} <span class="detail_release"></span></div>
+					</div>
+                                        <div class="resume">
+						<div class="cover_infos_resume">{{c.resume}} <span class="detail_release"></span></div>
+					</div>
+                                                                                <div class="auteur">
+						<div class="cover_infos_resume"{{c.auteur}} <span classsume="detail_release"></span></div>
+					</div>
+				</div>
+				<div class="gerne">
+				<div id=""/>{{c.libelle}} 
+				</div>
+				
+			</div>
+                                        <br><br><br> 
+				
+			
+        
+     </div>
+        
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        {% endfor %}
+        
+
+    {%endblock %}
+    
+    {% block style %}
+        <style>
+        
+        .block-bibliotheque { display: inline-block; }
+        .cover_infos_title  { font-size: 25px; text-align: center; padding-top: 10px;}
+      .espace {}
+
+        {% endblock %}

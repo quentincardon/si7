@@ -1,0 +1,91 @@
+{% extends "base.html.twig" %}
+
+{% block style %}
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="css/main.css" rel="stylesheet" media="all">
+    {%endblock %}
+
+{% block inscription %}
+
+ 
+{% if form.valide is defined %}
+ {% if form.valide == true %}
+ <h1 class="h3 mb-3 font-weight-normal">Inscription réussie</h1><br>
+ <h1 class="h3 mb-3 font-weight-normal">Voici votre identifiant : {{session.login}}</h1>
+ 
+ 
+ {% else %}
+ <h1 class="h3 mb-3 font-weight-normal">Echec de l'inscription</h1><
+ <h1 class="h3 mb-3 font-weight-normal">Erreur : {{form.message}}</h1>
+ <h1 class="h3 mb-3 font-weight-normal"><a href="index.php?page=inscription">Retourner sur
+la page d'inscription</a></h1>
+ {% endif %} 
+ {% else %} 
+     
+     <h1> Inscription a la soirée jeux de rôle de la semaine </h1>
+    
+                    <form method="POST">
+                        <div class="form-row m-b-55">
+                            <div class="name">Informations</div>
+                            <div class="value">
+                                <div class="row row-space">
+                                    <div class="col-2">
+                                        <div class="input-group-desc">
+                                            <input class="input--style-5" id="nom" type="text" name="nom" required>
+                                            <label for="nom" class="label--desc">Nom</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-group-desc">
+                                            <input class="input--style-5" id="prenom" type="text" name="prenom">
+                                            <label for="prenom" class="label--desc">Prénom</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Pseudo</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" id="pseudo" type="text" name="pseudo">
+                                     <label for="pseudo" class="label--desc"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Email</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" id="email" type="email" name="email">
+                                     <label for="email" class="label--desc"></label>
+                                </div>
+                            </div>
+                        </div>
+                                       
+                        <div>
+                            <button class="btn btn--radius-2 btn--red" type="submit"
+name="btInscrire">S'enregistrer</button>
+                        </div>
+                    </form>
+                 {% endif %}
+    
+   {% endblock %}
+     
+             
+{% block js %}
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/select2/select2.min.js"></script>
+    <script src="vendor/datepicker/moment.min.js"></script>
+    <script src="vendor/datepicker/daterangepicker.js"></script>
+    <script src="js/global.js"></script>
+{% endblock %}

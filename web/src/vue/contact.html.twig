@@ -1,0 +1,25 @@
+
+ {% extends "base.html.twig" %}
+
+{% block inscription %}
+     <form class="form-signin" action="index.php?page=contact" method="post" enctype="multipart/form-data">
+        
+         
+         <center> <fieldset>  <h1 class="h3 mb-3 font-weight-normal">Contact</h1>
+        <input hidden="id" />
+        <input type="text" id="nom" name="nom" class="form-control"placeholder="nom" required autofocus>
+        <br>
+        <input type="text" id="pseudo" name="pseudo" class="form-control"placeholder="Username" required autofocus>
+        <br>
+        <input type="text" id="email" name="email" class="text-input required email"placeholder="adresse email" required autofocus>
+        <br>
+        <textarea id="message" name="message" rows="5" cols="40" class="form-control" placeholder="Message" required autofocus></textarea>
+        <br>
+        <button class="btn btn-lg btn-danger btn-block" type="submit" name="btGererC">Poser</button>
+        <input type="hidden" name="v_error" id="v-error" value="Required">
+            <input type="hidden" name="v_email" id="v-email" value="Enter a valid email">
+             </fieldset>
+          </center>
+ </form>
+        {% endblock %}
+     
