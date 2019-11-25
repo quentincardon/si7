@@ -1,0 +1,223 @@
+
+<!DOCTYPE HTML>
+<html lang="fr">
+<head>
+<title>Legendarium</title>
+<meta charset="UTF-8">
+<link rel="shortcut icon" type="image/x-icon" href="style/images/favicon.png">
+<link rel="stylesheet" type="text/css" href="css/style.css" media="all">
+<link rel="stylesheet" type="text/css" href="color/red.css" media="all">
+<link rel="stylesheet" type="text/css" media="screen" href="css/prettyPhoto.css">
+<link rel="stylesheet" type="text/css" href="type/museo.css" media="all">
+<link rel="stylesheet" type="text/css" href="type/ptsans.css" media="all">
+<link rel="stylesheet" type="text/css" href="type/charis.css" media="all">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% block style %}
+    
+{% endblock %}
+
+<!-- Import script -->
+<script src="js/jquery-1.6.2.min.js"></script>
+<script src="js/ddsmoothmenu.js"></script>
+<script src="js/transify.js"></script>
+<script src="js/jquery.aw-showcase.js"></script>
+<script src="js/jquery.jcarousel.js"></script>
+<script src="js/carousel.js"></script>
+<script src="js/jquery.prettyPhoto.js"></script>
+<script src="js/jquery.superbgimage.min.js"></script>
+<script src="js/jquery.slickforms.js"></script>
+<script>
+jQuery(document).ready(function ($) {
+    $('.forms').dcSlickForms();
+});
+</script>
+<script>
+$(document).ready(function () {
+    $("#showcase").awShowcase({
+        content_width: 900,
+        content_height: 400,
+        auto: true,
+        interval: 3000,
+        continuous: false,
+        arrows: true,
+        buttons: true,
+        btn_numbers: true,
+        keybord_keys: true,
+        mousetrace: false,
+        /* Trace x and y coordinates for the mouse */
+        pauseonover: true,
+        stoponclick: false,
+        transition: 'fade',
+        /* hslide/vslide/fade */
+        transition_delay: 0,
+        transition_speed: 500,
+        show_caption: 'onload'
+		/* onload/onhover/show */
+    });
+});
+</script>
+<!-- Fin script-->
+</head>
+<body>
+    
+    
+<div id="thumbs"> <a href="images/art/bg1.jpg"></a> <a href="images/art/bg2.jpg"></a> <a href="images/art/bg3.jpg"></a> <a href="images/art/bg4.jpg"></a> <a href="images/art/bg5.jpg"></a> <a href="images/art/bg6.jpg"></a> </div>
+<div id="superbgimage">
+  <div class="scanlines"></div>
+</div>
+<div id="wrapper">
+      
+  <div id="header">
+    <div class="logo opacity"><a href="index.html"><img src="style/images/logo.png" alt=""></a></div>
+    <div class="social">
+      
+        <ul>
+      
+        <li><a href="https://www.facebook.com/LegendariumMedia/"><img src="images/icon-facebook.png" alt=""></a></li>
+        
+      </ul>
+    </div>
+  </div>
+    
+    
+    
+    
+  <div class="clear"></div>
+  <div id="menu" class="menu opacity">
+<ul>
+    <li><a href="index.php?page=acceuil">Acceuil</a></li>
+    <li><a href="index.php?page=actualite">Actualités</a>
+
+
+    </li>
+    <li><a href="index.php?page=catalogue">Catalogue</a>
+        
+    </li>
+    <li><a href="#">Soirée jeux de rôle</a>
+<ul>
+    <li><a href="index.php?page=introduction">Introduction</a></li>
+    <li><a href="index.php?page=reglement">Règlement</a></li>
+    <li><a href="index.php?page=inscriptionjdr">Inscription</a></li>
+    -
+</ul>
+    </li>
+    <li><a href="index.php?page=contact">Contacts</a></li>
+    <li><a href="#">Mon compte</a>
+        <ul>
+            {%if session.role == 2 %}
+            <li>
+            <a href="index.php?page=panel">Panel admin</a></li>
+            {% endif %}
+    {%if session.login is defined %}
+ <li><a href="index.php?page=compte&pseudo={{u.pseudo}}">Gestion de compte</a></li>
+ {% else %}
+ <li><a href="index.php?page=inscription">Inscription</a></li>
+ {% endif %}
+   {%if session.login is defined %}
+ <li><a href="index.php?page=deconnexion">Se déconnecter</a></li>
+ {% else %}
+ <li><a href="index.php?page=connexion">Se connecter</a></li>
+ {% endif %}
+        </ul>
+         <li>{% if form.utilisateurs.photo is not empty %}
+ <p class="imgcenter"><img src="images/profiles{{utilisateurs.photo}}" alt= "image profil " /></p>
+ {% endif %}</li>
+    
+</ul>
+     
+      
+      
+    <br style="clear: left">
+   
+  </div>
+   {% block contenue %}
+  <div id="container" class="opacity">
+      
+      {% block inscription %}
+      
+    <div id="showcase" class="showcase">
+      <div class="showcase-slide">
+        <div class="showcase-content"> <img src="images/art/s1.jpg" alt=""></div>
+      </div>
+      <div class="showcase-slide">
+        <div class="showcase-content"> <img src="images/art/s2.jpg" alt=""> </div>
+        <div class="showcase-caption"> Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit. </div>
+      </div>
+      <div class="showcase-slide">
+        <div class="showcase-content"> <img src="images/art/s3.jpg" alt=""></div>
+      </div>
+      <div class="showcase-slide">
+        <div class="showcase-content"> <img src="images/art/s4.jpg" alt=""> </div>
+        <div class="showcase-caption"> Praesent commodo cursus magna, vel scelerisque nisl consectetur et. </div>
+      </div>
+    </div>
+    <div class="intro">Legendarium votre cabinet de livrosité fantasy.</div>
+    <div class="hr2"></div>
+    <h2>Qu'est-ce que legendarium ?</h2>
+    <div class="two-third">
+        <p>
+            Legendarium est une librairie fantasy ou je vous propose des ouvrages qui vous feront voyager , nous proposons aussi des soirées jeux de de
+            rôle <a href="index.php?page=introduction">info ici </a> 
+        </p>
+    </div>
+    <div class="one-third last">
+      <ul>
+        <li>Fantasy.</li>
+        <li>Légende.</li>
+        <li>Conte & Histoire.</li>
+        <li>Fantastic.</li>
+      </ul>
+    </div>
+    <div class="clear"></div>
+    <br>
+    <br>
+    <br>
+    <div class="one-fourth"> 
+      <h4 class="center">Livres </h4>
+      <p class="center">Legendarium vous propose une game de livre en tout gerne.</p>
+    </div>
+    <div class="one-fourth"> 
+      <h4 class="center">Soirée jeux de rôle</h4>
+      <p class="center">Nous proposons des sessions jeux de rôle le vendredi<a href="index.php?page=introduction"> plus d'info ici  </a> .</p>
+    </div>
+    <div class="one-fourth"> 
+      <h4 class="center">Motion Graphic</h4>
+      <p class="center">Vivamus soder pharetra libero atincidunt, nisi condimentum Quisque non sodales nislero.</p>
+    </div>
+    <div class="one-fourth last"> 
+      <h4 class="center">Optimization</h4>
+      <p class="center">Vivamus soder pharetra libero atincidunt, nisi condimentum Quisque non sodales nislero.</p>
+    </div>
+    <div class="clear"></div>
+    <div class="hr1"></div>
+    <h2>Dernier livres sortie</h2>
+    <div class="carousel">
+      <div id="carousel-scroll"><a href="#" id="prev">Prev</a><a href="#" id="next">Next</a></div>
+      <ul>
+        <li>  <span class="overlay details"></span><img src="images/art/livre1.jpg" alt=""> </li>
+        <li>  <span class="overlay details"></span><img src="images/art/livre2.jpg" alt=""> </li>
+        <li>  <span class="overlay details"></span><img src="images/art/livre3.jpg" alt=""> </li>
+        <li>  <span class="overlay details"></span><img src="images/art/livre4.jpg" alt=""> </li>
+        <li>  <span class="overlay details"></span><img src="images/art/livre5.jpg" alt=""> </li>
+        <li>  <span class="overlay details"></span><img src="images/art/livre6.jpg" alt=""> </li>
+        <li>  <span class="overlay details"></span><img src="images/art/livre7.jpg" alt=""> </li>
+        <li>  <span class="overlay details"></span><img src="images/art/livre6.jpg" alt=""> </li>
+      </ul>
+    </div>
+    
+    {%endblock%} {% endblock %}
+  </div>   
+  
+
+  <div id="copyright" >
+    <p>Copyright Legendarium 2019. Tous droits reservé Template par <a href="http://elemisfreebies.com">elemis</a>.</p>
+  </div>
+</div>
+  {% block js %}
+      
+  {% endblock %}
+<script src="js/scripts.js"></script>
+
+</body>
+</html>

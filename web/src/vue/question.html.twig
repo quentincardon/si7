@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+
+{% block inscription %}
+     <form class="form-signin" action="index.php?page=question" method="post" enctype="multipart/form-data">
+         <center>  <h1 class="h3 mb-3 font-weight-normal">Question pour le forum</h1>
+        <input hidden="id" />
+        <input type="text" id="pseudo" name="pseudo" class="form-control"placeholder="Pseudo" required autofocus>
+        <br>
+        <input type="text" id="objet" name="objet" class="form-control"placeholder="Objet du message" required autofocus>
+        <br>
+        <textarea id="message" name="message" rows="5" cols="40" class="form-control"placeholder="Posez votre question" required autofocus></textarea>
+        <br>
+        <button class="btn btn-lg btn-danger btn-block" type="submit" name="btGererF">POSER</button>
+        <br>
+        <a href="index.php?page=forum" class="btn btn-lg btn-danger btn-block">Forum</a>
+          </center>
+ </form>
+        {% endblock %}

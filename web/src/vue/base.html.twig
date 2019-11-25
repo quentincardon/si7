@@ -1,0 +1,272 @@
+
+<!DOCTYPE HTML>
+<html lang="fr">
+<head>
+
+    
+     
+    
+    
+    
+    
+    <title>WOW</title>
+<meta charset="UTF-8">
+<link rel="shortcut icon" type="image/x-icon" href="style/images/favicon.png">
+<link rel="stylesheet" type="text/css" href="css/style.css" media="all">
+<link rel="stylesheet" type="text/css" href="color/red.css" media="all">
+<link rel="stylesheet" type="text/css" media="screen" href="css/prettyPhoto.css">
+<link rel="stylesheet" type="text/css" href="type/museo.css" media="all">
+<link rel="stylesheet" type="text/css" href="type/ptsans.css" media="all">
+<link rel="stylesheet" type="text/css" href="type/charis.css" media="all">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% block style %}
+    
+{% endblock %}
+
+<!-- Import script -->
+<script src="js/jquery-1.6.2.min.js"></script>
+<script src="js/ddsmoothmenu.js"></script>
+<script src="js/transify.js"></script>
+<script src="js/jquery.aw-showcase.js"></script>
+<script src="js/jquery.jcarousel.js"></script>
+<script src="js/carousel.js"></script>
+<script src="js/jquery.prettyPhoto.js"></script>
+<script src="js/jquery.superbgimage.min.js"></script>
+<script src="js/jquery.slickforms.js"></script>
+<script>
+jQuery(document).ready(function ($) {
+    $('.forms').dcSlickForms();
+});
+</script>
+<script>
+$(document).ready(function () {
+    $("#showcase").awShowcase({
+        content_width: 900,
+        content_height: 400,
+        auto: true,
+        interval: 2000,
+        continuous: false,
+        arrows: true,
+        buttons: true,
+        btn_numbers: true,
+        keybord_keys: true,
+        mousetrace: false,
+        /* Trace x and y coordinates for the mouse */
+        pauseonover: true,
+        stoponclick: false,
+        transition: 'fade',
+        /* hslide/vslide/fade */
+        transition_delay: 0,
+        transition_speed: 500,
+        show_caption: 'onload'
+		/* onload/onhover/show */
+    });
+});
+</script>
+<!-- Fin script-->
+</head>
+<body>
+    
+    
+    <div class="showcase-content"> <img src="../wow.png" alt="" width="30%"  ></div>
+     
+</div>
+    
+    
+    
+<div id="thumbs">  <a href="images/wow1.jpg"></a> </div>
+
+<div id="wrapper">
+      
+  <div id="header">
+    <div class="logo opacity"><a href="index.html"><img src="style/images/logo.png" alt=""></a></div>
+    <div class="social">
+      
+        <ul>
+      
+        
+        
+      </ul>
+    </div>
+  </div>
+    
+    
+    
+    
+  <div class="clear"></div>
+  <div id="menu" class="menu opacity">
+<ul>
+    <!--<li><a href="index.php?page=acceuil">Accueil</a></li>-->
+    <li><a href="index.php?page=actualite">Accueil</a>
+
+
+    </li>
+    
+        
+    </li>
+    <li><a href="#">Liens</a>
+<ul>
+    <li><a href="https://worldofwarcraft.com/fr-fr/">Site officiel</a></li>
+    <li><a href="https://battle.net/account/creation/tos.html?theme=wow&style=wow-trial">Téléchargement</a></li>
+
+    -
+</ul>
+    </li>
+    
+   
+    
+     <li><a href="#">Forum</a>
+<ul>
+    <li><a href="index.php?page=question">Poser une question</a></li>
+    <li><a href="index.php?page=forum">Voir les questions</a></li>
+
+    -
+</ul>
+    </li>
+      <li><a href="index.php?page=contact"> Contact</a></li>
+
+    <li><a href="#">Mon compte</a>
+        <ul>
+            {%if session.role == 2 %}
+            <li>
+            <a href="index.php?page=panel">Panel admin</a></li>
+            {% endif %}
+    {%if session.login is defined %}
+ <li><a href="index.php?page=compte&pseudo={{u.pseudo}}">Gestion de compte</a></li>
+ {% else %}
+ <li><a href="index.php?page=inscription">Inscription</a></li>
+ {% endif %}
+   {%if session.login is defined %}
+ <li><a href="index.php?page=deconnexion">Se déconnecter</a></li>
+ {% else %}
+ <li><a href="index.php?page=connexion">Se connecter</a></li>
+ {% endif %}
+        </ul>
+         <li>{% if form.utilisateurs.photo is not empty %}
+ <p class="imgcenter"><img src="images/profiles{{utilisateurs.photo}}" alt= "image profil " /></p>
+ {% endif %}</li>
+    
+</ul>
+     
+      
+      
+    <br style="clear: left">
+   
+  </div>
+   {% block contenue %}
+  <div id="container" class="opacity">
+      
+      {% block inscription %}
+          <p><b><center> Bienvenue sur une dérive du site de World of Warcraft, un site qui permet aux joueurs d'être informés de certaines actualités, poser des questions aux administrateurs afin de résoudre vos problèmes. </center></b></p></br>
+    <div id="showcase" class="showcase">
+      
+
+        <div class="showcase-slide">
+        <div class="showcase-content"> <img src="images/crop.jpg" alt="" width="100%"  ></div>
+      </div>
+      
+     
+   
+        <div class="showcase-slide">
+          <div class="showcase-content"> <img src="images/crop3.jpg" alt=""  width="100%"> </div>
+ 
+      </div>
+           
+           <div class="showcase-slide">
+          <div class="showcase-content"> <img src="images/screen1.jpg" alt=""  width="100%"> </div>
+ 
+      </div>
+           
+                <div class="showcase-slide">
+        <div class="showcase-content"> <img src="images/wow12.png" alt=""  width="100%"> </div>
+ 
+      </div>
+           
+                <div class="showcase-slide">
+          <div class="showcase-content"> <img src="images/wow13.jpg" alt=""  width="100%"> </div>
+ 
+      </div>
+           
+                <div class="showcase-slide">
+          <div class="showcase-content"> <img src="images/wow14.png" alt=""  width="100%"> </div>
+ 
+      </div>
+           
+                <div class="showcase-slide">
+          <div class="showcase-content"> <img src="images/wow15.jpg" alt=""  width="100%"> </div>
+ 
+      </div>
+           
+                <div class="showcase-slide">
+          <div class="showcase-content"> <img src="images/wow16.jpg" alt=""  width="100%"> </div>
+ 
+      </div>
+           
+                <div class="showcase-slide">
+          <div class="showcase-content"> <img src="images/wow17.jpg" alt=""  width="100%"> </div>
+ 
+      </div>
+           
+                <div class="showcase-slide">
+          <div class="showcase-content"> <img src="images/wow18.jpg" alt=""  width="100%"> </div>
+ 
+      </div>
+    
+    </div>
+   
+         
+          
+          {% block contenu %}
+    {% if form.valide is defined %}
+ {% if form.valide == true %}
+     <h1 >{{ form.message }}</h1><br><br>
+ {% else %}
+     <h1 >{{ form.message }}</h1><br><br>
+ {% endif %}
+{% endif %} 
+<h2> 
+
+    
+    <h1><i class="fa fa-newspaper-o" aria-hidden="true"></i> Actualités</h1><br>
+    
+    {% for a in liste %}
+        
+    <br>
+    <div class="title-a"><U><h4>  {{a.titre}}</h4> </U></div> <br><br>
+        <div class="message-a">  {{a.message}} </div><br><br>
+      
+                              
+        <br><div class="publish-a"><i class="fa fa-user" aria-hidden="true"></i> Publié <!--par <b>AdminWoW</b> -->le {{a.date}}</div>
+        <hr>
+        
+  <span class="likebtn-wrapper" data-lang="fr" data-i18n_like="J'aime" data-ef_voting="push" data-identifier="like_01"></span>
+ <!-- 
+<script>
+    (function(d,e,s){if(d.getElementById("likebtn_wjs"))return;a=d.createElement(e);m=d.getElementsByTagName(e)[0];a.async=1;a.id="likebtn_wjs"
+    ;a.src=s;m.parentNode.insertBefore(a, m)})(document,"script","//w.likebtn.com/js/w/widget.js");
+</script>
+ -->
+
+        
+        
+            {%if session.role == 2 %}
+            <div class="del">    <a href="index.php?page=actualite&idactu={{a.idactu}}"> SUPPRIMER </a> </div><br>{% endif %}
+
+    
+            <br><center><div class="separationBorder "></div></center><br>
+    {% endfor %}
+        
+    {%endblock %}
+    {%endblock%} {% endblock %}
+  </div>   
+  
+
+  
+  {% block js %}
+      
+  {% endblock %}
+<script src="js/scripts.js"></script>
+
+</body>
+</html>
